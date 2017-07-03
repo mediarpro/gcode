@@ -1,0 +1,18 @@
+package com.pixelduke.javafx.ribbon.skin;
+
+import javafx.scene.control.TextField;
+
+public class MetroTextFieldSkin extends TextFieldWithButtonSkin
+{
+
+    public MetroTextFieldSkin(TextField textField) {
+        super(textField);
+    }
+
+    @Override
+    protected void rightButtonPressed()
+    {
+        getSkinnable().setText("");
+    }
+
+}

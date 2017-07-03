@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<?import com.pixelduke.javafx.ribbon.Column?>
+<?import com.pixelduke.javafx.ribbon.Gallery?>
+<?import com.pixelduke.javafx.ribbon.GalleryItem?>
+<?import com.pixelduke.javafx.ribbon.Ribbon?>
+<?import com.pixelduke.javafx.ribbon.RibbonItem?>
+<?import com.pixelduke.javafx.ribbon.RibbonTab?>
+<?import com.pixelduke.javafx.ribbon.RibbonGroup?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane prefHeight="600" prefWidth="900" stylesheets="@css/style.css" fx:controller="bg.tu_sofia.gcode.Home" xmlns:fx="http://javafx.com/fxml">
+    <top>
+        <Ribbon>
+            <tabs>
+                <RibbonTab text="HOME">
+                    <ribbonGroups>
+                        <RibbonGroup title="Model">
+                            <nodes>
+                                <Button text="New" onAction="#newModel" minWidth="-Infinity" contentDisplay="TOP" wrapText="true" styleClass="normal">
+                                    <graphic>
+                                        <ImageView>
+                                            <image>
+                                                <Image url="@res/new.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button text="Open" onAction="#openModel" minWidth="-Infinity" contentDisplay="TOP" wrapText="true" styleClass="normal">
+                                    <graphic>
+                                        <ImageView>
+                                            <image>
+                                                <Image url="@res/open.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button text="Save" onAction="#saveModel" minWidth="-Infinity" contentDisplay="TOP" wrapText="true" styleClass="normal" >
+                                    <graphic>
+                                        <ImageView>
+                                            <image>
+                                                <Image url="@res/save.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button text="Save as" onAction="#saveAsModel" minWidth="-Infinity" contentDisplay="TOP" wrapText="true" styleClass="normal">
+                                    <graphic>
+                                        <ImageView>
+                                            <image>
+                                                <Image url="@res/save_as.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </nodes>
+                        </RibbonGroup>
+                        <RibbonGroup title="Creation and generation">
+                            <nodes>
+                            	<Column>
+								    <Gallery numOfVisibleItems="1">
+								        <items>
+								            <GalleryItem name="C" category="Language modules">
+								                <graphic>
+								                    <ImageView>
+								                        <image>
+								                            <Image url="@res/c.png" />
+								                        </image>
+								                    </ImageView>
+								                </graphic>
+								            </GalleryItem>
+								            <GalleryItem name="C++" category="Language modules">
+								                <graphic>
+								                    <ImageView>
+								                        <image>
+								                            <Image url="@res/cpp.png" />
+								                        </image>
+								                    </ImageView>
+								                </graphic>
+								            </GalleryItem>
+								            <GalleryItem name="Java" category="Language modules">
+								                <graphic>
+								                    <ImageView>
+								                        <image>
+								                            <Image url="@res/java.png" />
+								                        </image>
+								                    </ImageView>
+								                </graphic>
+								            </GalleryItem>
+								        </items>
+								    </Gallery>
+							    </Column>
+								<Column>
+									<Button text="Create from text" onAction="#createModelFromText" minWidth="-Infinity" contentDisplay="LEFT" wrapText="true" styleClass="small">
+	                                    <graphic>
+	                                        <ImageView>
+	                                            <image>
+	                                                <Image url="@res/text.png" />
+	                                            </image>
+	                                        </ImageView>
+	                                    </graphic>
+	                                </Button>
+	                                <Button text="Create from file" onAction="#createModelFromFile" minWidth="-Infinity" contentDisplay="LEFT" wrapText="true" styleClass="small">
+	                                    <graphic>
+	                                        <ImageView>
+	                                            <image>
+	                                                <Image url="@res/file.png" />
+	                                            </image>
+	                                        </ImageView>
+	                                    </graphic>
+	                                </Button>
+								</Column>
+                                <Button text="Generate" onAction="#generateModel" minWidth="-Infinity" contentDisplay="TOP" wrapText="true" styleClass="normal">
+                                    <graphic>
+                                        <ImageView>
+                                            <image>
+                                                <Image url="@res/generate.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </nodes>
+                        </RibbonGroup>
+                    </ribbonGroups>
+                </RibbonTab>
+                <RibbonTab text="EDIT">
+	                <ribbonGroups>
+	                	<RibbonGroup title="Modification">
+		                	<nodes>
+		                		<Button text="Add" onAction="#addElement" minWidth="-Infinity" contentDisplay="TOP" wrapText="true" styleClass="normal">
+                                    <graphic>
+                                        <ImageView>
+                                            <image>
+                                                <Image url="@res/add.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button text="Edit" onAction="#editElement" minWidth="-Infinity" contentDisplay="TOP" wrapText="true" styleClass="normal">
+                                    <graphic>
+                                        <ImageView>
+                                            <image>
+                                                <Image url="@res/edit.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button text="Delete" onAction="#deleteElement" minWidth="-Infinity" contentDisplay="TOP" wrapText="true" styleClass="normal">
+                                    <graphic>
+                                        <ImageView>
+                                            <image>
+                                                <Image url="@res/delete.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button text="Move" onAction="#moveElement" minWidth="-Infinity" contentDisplay="TOP" wrapText="true" styleClass="normal">
+                                    <graphic>
+                                        <ImageView>
+                                            <image>
+                                                <Image url="@res/move.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+		                	</nodes>
+	                	</RibbonGroup>
+	                	<RibbonGroup title="Transformation">
+		                	<nodes>
+		                		<Column>
+								    <Gallery numOfVisibleItems="1">
+								        <items>
+								            <GalleryItem name="Add &quot;final&quot; attribute where possible" category="Transformation modules">
+								                <graphic>
+								                    <ImageView>
+								                        <image>
+								                            <Image url="@res/function.png" />
+								                        </image>
+								                    </ImageView>
+								                </graphic>
+								            </GalleryItem>
+								            <GalleryItem name="Remove unused variables" category="Transformation modules">
+								                <graphic>
+								                    <ImageView>
+								                        <image>
+								                            <Image url="@res/function.png" />
+								                        </image>
+								                    </ImageView>
+								                </graphic>
+								            </GalleryItem>
+								        </items>
+								    </Gallery>
+							    </Column>
+                                <Button text="Transform" onAction="#transformModel" minWidth="-Infinity" contentDisplay="TOP" wrapText="true" styleClass="normal">
+                                    <graphic>
+                                        <ImageView>
+                                            <image>
+                                                <Image url="@res/transform.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+		                	</nodes>
+	                	</RibbonGroup>
+	                </ribbonGroups>
+                </RibbonTab>
+                <RibbonTab text="VISUALIZATION">
+                	<ribbonGroups>
+	                	<RibbonGroup title="Parameters">
+		                	<nodes>
+		                		<Column>
+                                    <ToggleButton text="Labels" onMouseClicked="#changeLabels" minWidth="-Infinity" styleClass="small">
+                                        <graphic>
+                                            <ImageView>
+                                                <image>
+                                                    <Image url="@res/labels.png" />
+                                                </image>
+                                            </ImageView>
+                                        </graphic>
+                                    </ToggleButton>
+                                    <ToggleButton text="Details" onMouseClicked="#changeDetails" minWidth="-Infinity" styleClass="small">
+                                        <graphic>
+                                            <ImageView>
+                                                <image>
+                                                    <Image url="@res/details.png" />
+                                                </image>
+                                            </ImageView>
+                                        </graphic>
+                                    </ToggleButton>
+                                </Column>
+                                <Column>
+								    <Gallery numOfVisibleItems="1">
+								        <items>
+								        	<GalleryItem name="Green-Gray" category="Graphical modules">
+								                <graphic>
+								                    <ImageView>
+								                        <image>
+								                            <Image url="@res/green_gray.png" />
+								                        </image>
+								                    </ImageView>
+								                </graphic>
+								            </GalleryItem>
+								            <GalleryItem name="Orange-Gray" category="Graphical modules">
+								                <graphic>
+								                    <ImageView>
+								                        <image>
+								                            <Image url="@res/orange_gray.png" />
+								                        </image>
+								                    </ImageView>
+								                </graphic>
+								            </GalleryItem>
+								        </items>
+								    </Gallery>
+							    </Column>
+		                	</nodes>
+		                </RibbonGroup>
+		                <RibbonGroup title="Zoom">
+		                	<nodes>
+		                	    <Button text="Zoom in" onAction="#zoomInVisualization" minWidth="-Infinity" contentDisplay="TOP" wrapText="true" styleClass="normal">
+                                    <graphic>
+                                        <ImageView>
+                                            <image>
+                                                <Image url="@res/zoom_in.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button text="Zoom out" onAction="#zoomOutVisualization" minWidth="-Infinity" contentDisplay="TOP" wrapText="true" styleClass="normal">
+                                    <graphic>
+                                        <ImageView>
+                                            <image>
+                                                <Image url="@res/zoom_out.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button text="Zoom reset" onAction="#zoomResetVisualization" minWidth="-Infinity" contentDisplay="TOP" wrapText="true" styleClass="normal">
+                                    <graphic>
+                                        <ImageView>
+                                            <image>
+                                                <Image url="@res/zoom_reset.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+		                	</nodes>
+		                </RibbonGroup>
+		                <RibbonGroup title="Image">
+		                	<nodes>
+		                	    <Column>
+								    <Gallery numOfVisibleItems="1">
+								        <items>
+								            <GalleryItem name="PNG (Raster)" category="Image modules">
+								                <graphic>
+								                    <ImageView>
+								                        <image>
+								                            <Image url="@res/png.png" />
+								                        </image>
+								                    </ImageView>
+								                </graphic>
+								            </GalleryItem>
+								            <GalleryItem name="Adobe Illustractor (Vector)" category="Image modules">
+								                <graphic>
+								                    <ImageView>
+								                        <image>
+								                            <Image url="@res/ai.png" />
+								                        </image>
+								                    </ImageView>
+								                </graphic>
+								            </GalleryItem>
+								        </items>
+								    </Gallery>
+							    </Column>
+							    <Column>
+									<Button text="Copy" onAction="#copyImage" minWidth="-Infinity" contentDisplay="LEFT" wrapText="true" styleClass="small">
+	                                    <graphic>
+	                                        <ImageView>
+	                                            <image>
+	                                                <Image url="@res/copy.png" />
+	                                            </image>
+	                                        </ImageView>
+	                                    </graphic>
+	                                </Button>
+	                                <Button text="Save" onAction="#saveImage" minWidth="-Infinity" contentDisplay="LEFT" wrapText="true" styleClass="small">
+	                                    <graphic>
+	                                        <ImageView>
+	                                            <image>
+	                                                <Image url="@res/image.png" />
+	                                            </image>
+	                                        </ImageView>
+	                                    </graphic>
+	                                </Button>
+								</Column>
+		                	</nodes>
+		                </RibbonGroup>
+		            </ribbonGroups>
+                </RibbonTab>
+                <RibbonTab text="SETTINGS">
+                	<ribbonGroups>
+                		<RibbonGroup title="Application">
+		                	<nodes>
+		                		<Button text="Modules" onAction="#openModules" minWidth="-Infinity" contentDisplay="TOP" wrapText="true" styleClass="normal">
+                                    <graphic>
+                                        <ImageView>
+                                            <image>
+                                                <Image url="@res/modules.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button text="Settings" onAction="#openSettings" minWidth="-Infinity" contentDisplay="TOP" wrapText="true" styleClass="normal">
+                                    <graphic>
+                                        <ImageView>
+                                            <image>
+                                                <Image url="@res/settings.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button text="Help" onAction="#openHelp" minWidth="-Infinity" contentDisplay="TOP" wrapText="true" styleClass="normal">
+                                    <graphic>
+                                        <ImageView>
+                                            <image>
+                                                <Image url="@res/help.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button text="About" onAction="#openAbout" minWidth="-Infinity" contentDisplay="TOP" wrapText="true" styleClass="normal">
+                                    <graphic>
+                                        <ImageView>
+                                            <image>
+                                                <Image url="@res/about.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+		                	</nodes>
+		            	</RibbonGroup>
+		            </ribbonGroups>
+                </RibbonTab>
+            </tabs>
+        </Ribbon>
+    </top>
+    <center>
+    	<ScrollPane fx:id="scrVisualization">
+        </ScrollPane>
+    </center>
+</BorderPane>

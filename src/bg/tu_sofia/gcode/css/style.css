@@ -1,0 +1,10 @@
+#scrVisualization
+{
+    -fx-padding: 0;
+
+}
+
+#scrVisualization > .viewport
+{
+    -fx-background-color: black;
+}
